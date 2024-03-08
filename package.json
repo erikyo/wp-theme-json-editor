@@ -1,0 +1,46 @@
+{
+  "name": "wp-options-changer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "build:makepot": "wp i18n make-pot . languages/vsge-language-switcher.pot --exclude=node_modules,vendor --domain=vsge-language-switcher",
+    "wp-env": "npm run wp-env start -- --update"
+  },
+  "devDependencies": {
+    "@types/dragula": "*",
+    "@types/json5": "*",
+    "@types/markdown-it": "*",
+    "@wordpress/scripts": "^27.4.0",
+    "css-loader": "^6.10.0",
+    "dragula": "^3.7.3",
+    "highlight.js": "^11.9.0",
+    "json5": "2",
+    "markdown-it": "^14.0.0",
+    "markdown-tip-react": "7",
+    "postcss": "^8.4.35",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^9.5.0",
+    "schema-based-json-editor": "^8.3.0",
+    "select2-react-component": "6",
+    "style-loader": "^3.3.4",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@json-editor/json-editor": "^2.14.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

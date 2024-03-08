@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.theme-json-editor {
+	max-width: 600px;
+
+	button, [type='button'], [type='reset'], [type='submit'] {
+		background: #2271b1;
+		border-color: #2271b1;
+		color: #fff;
+
+		+ button, [type='button'] {
+			margin-left: 10px;
+		}
+	}
+}
