@@ -21,7 +21,7 @@ window.addEventListener( 'DOMContentLoaded', async ( event ) => {
 		dataset.innerHTML = value
 	};
 
-	const newValue = JSON.parse(content)
+	const startval = JSON.parse(content)
 	const currentSchema = schemaJson
 		? schemaJson
 		: await fetch(schema, {
@@ -37,10 +37,11 @@ window.addEventListener( 'DOMContentLoaded', async ( event ) => {
 
 	const options = Object.assign( {}, JSONEditor.defaults.options, {
 		icon: icon,
-		theme: 'spectre',
+		theme: theme,
 		schema: currentSchema,
 		show_opt_in: true,
 
+		startval: startval,
 		disable_edit_json: true,
 		disable_properties: true,
 		disable_collapse: true,

@@ -31,7 +31,7 @@ function theme_json_editor_style() {
 }
 function theme_json_editor_script() {
     $asset = include __DIR__ . '/build/theme-json-editor.asset.php';
-    wp_enqueue_script( 'jsoneditor' ,plugin_dir_url( __FILE__ ) . 'node_modules/@json-editor/json-editor/dist/nonmin/jsoneditor.js' );
+    wp_enqueue_script( 'jsoneditor' ,plugin_dir_url( __FILE__ ) . 'node_modules/@json-editor/json-editor/dist/jsoneditor.js' );
     wp_enqueue_script( 'options-changer-admin', plugin_dir_url( __FILE__ ) . 'build/theme-json-editor.js', array_merge($asset['dependencies'], array('jsoneditor')), $asset['version'], array(
         'in_footer' => false
     ) );
@@ -68,7 +68,7 @@ function theme_json_editor_page() {
     <h2>Theme JSON</h2>
     <form method="post" action="">
       <label for="theme_json_content">Theme JSON Content:</label>
-		<textarea name="json-dataset" id="json-dataset" class="hidden" ><?php echo wp_json_encode( $theme_json_post, JSON_PRETTY_PRINT ) ?></textarea>
+		<textarea name="json-dataset" id="json-dataset" class="hidden" ><?php echo wp_json_encode( $theme_json, JSON_PRETTY_PRINT ) ?></textarea>
       <div id="root" data-schema="https://schemas.wp.org/trunk/theme.json" data-theme="spectre" data-icon="materialize"></div>
       <input type="submit" name="save_theme_json" class="button-primary" value="Save Theme JSON">
     </form>
