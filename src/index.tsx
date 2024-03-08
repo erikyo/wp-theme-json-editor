@@ -44,10 +44,12 @@ window.addEventListener( 'DOMContentLoaded', async ( event ) => {
 		startval: startval,
 		disable_edit_json: true,
 		disable_properties: true,
-		disable_collapse: true,
 		max_depth: 3,
+		display_required_only: true,
+		show_errors: 'always',
 		updateValue: updateValue
 	});
+
 
 	// new instance of JSONEditor
 	const editor = new JSONEditor(  rootEl, options );

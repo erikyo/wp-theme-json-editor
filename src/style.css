@@ -3,15 +3,33 @@
 @tailwind utilities;
 
 .theme-json-editor {
-	max-width: 600px;
+	max-width: 800px;
 
-	button, [type='button'], [type='reset'], [type='submit'] {
+	button,
+	[type="button"],
+	[type="reset"],
+	[type="submit"] {
 		background: #2271b1;
 		border-color: #2271b1;
 		color: #fff;
 
-		+ button, [type='button'] {
+		+ button,
+		[type="button"] {
 			margin-left: 10px;
 		}
 	}
+
+	ol ol,
+	ol ul,
+	ul ol,
+	ul ul {
+		margin: 0.8rem 0 1.5rem 2rem;
+	}
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+	margin: 0;
 }
