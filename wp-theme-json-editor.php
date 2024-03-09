@@ -68,16 +68,21 @@ function theme_json_editor_page() {
 	?>
 	<div class="wrap theme-json-editor">
 		<h2>Theme JSON</h2>
-		<form method="post" action="" class="p2">
+		<form method="post" action="" class="block py-2 px-4">
 			<label for="json-depth">JSON Depth:</label>
 			<input type="number" value="3" id="json-depth"/>
 
 			<label for="json-depth">JSON Depth:</label>
 			<input type="checkbox" value="0" id="required-only"/>
 
-			<textarea name="json-dataset" id="json-dataset" class="hidden"><?php echo wp_json_encode( $theme_json, JSON_PRETTY_PRINT ) ?></textarea>
+			<div class="flex justify-between align-top">
 
-			<div id="root" data-schema="https://schemas.wp.org/trunk/theme.json" data-theme="spectre" data-icon="materialize"></div>
+				<div id="root" class="max-w-1/2"></div>
+				<div name="json-dataset" id="json-dataset"  class="max-w-1/2">
+					<pre><code><?php echo wp_json_encode( $theme_json, JSON_PRETTY_PRINT ) ?></code></pre>
+				</div>
+			</div>
+
 			<input type="submit" name="save_theme_json" class="button-primary" value="Save Theme JSON">
 		</form>
 	</div>

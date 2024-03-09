@@ -4,7 +4,7 @@ import schemaJson from './schema.json'
 window.addEventListener( 'DOMContentLoaded', async ( event ) => {
 
 	const rootEl = document.getElementById('root');
-	const dataset = document.getElementById('json-dataset');
+	const dataset = document.querySelector('#json-dataset code');
 	const content = dataset.innerText as string
 	const schema =  rootEl.dataset.schema
 	const theme =  rootEl.dataset.theme || 'spectre'
@@ -35,6 +35,14 @@ window.addEventListener( 'DOMContentLoaded', async ( event ) => {
 			}
 		} ).then( response => response.json()  );
 
+	currentSchema.definitions.settingsPropertiesColor.properties.color.properties.palette.items.properties.color.format = 'color';
+	currentSchema.definitions.settingsPropertiesColor.properties.color.properties.palette.items.properties.color.colorpicker = {
+		'editorFormat': 'rgb',
+		'alpha': true
+	}
+
+	console.log(currentSchema);
+
 	const options = Object.assign( {}, JSONEditor.defaults.options, {
 		icon: icon,
 		theme: theme,
@@ -54,5 +62,9 @@ window.addEventListener( 'DOMContentLoaded', async ( event ) => {
 	// new instance of JSONEditor
 	const editor = new JSONEditor(  rootEl, options );
 
+	editor.on('change',() => {
+		const content = editor.getValue();
+		dataset.innerHTML = JSON.stringify(content, null, 2)
+	})
 
 })

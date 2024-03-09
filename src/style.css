@@ -3,14 +3,26 @@
 @tailwind utilities;
 
 .theme-json-editor {
-	max-width: 800px;
+
+	max-width: 100%;
+
+	div[data-theme="spectre"] * {
+		--primary-color: #5755d9;
+		--gray-color: #bcc3ce;
+		--light-color: #fff;
+		padding: 0 0.2rem 0.2rem;
+	}
+
+	.container {
+		padding: 1rem 1rem 0.5rem;
+	}
 
 	button,
 	[type="button"],
 	[type="reset"],
 	[type="submit"] {
-		background: #2271b1;
-		border-color: #2271b1;
+		background: #5755d9;
+		border-color: #4846c0;
 		color: #fff;
 
 		+ button,
