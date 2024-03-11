@@ -2,4 +2,5 @@
 
 experimental
 
-![theme](https://github.com/erikyo/wp-theme-json-editor/assets/8550908/7fc7d702-f8db-4b8b-9ac5-0108cc660ebf)
+![themej](https://github.com/erikyo/wp-theme-json-editor/assets/8550908/de11e6ad-71db-4beb-aacf-fa820a5ff62a)
+
