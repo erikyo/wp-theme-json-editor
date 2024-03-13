@@ -51,7 +51,7 @@ function theme_json_editor_page() {
 	}
 	// Fetch the content of the post
 	$theme_json_post   = wp_get_global_styles();
-	$theme_jon_content = json_decode( file_get_contents( VSGE_THEME_DIR . '/theme.json' ), ARRAY_A );
+	$theme_jon_content = json_decode( file_get_contents( get_template_directory() . '/theme.json' ), ARRAY_A );
 	$theme_json        = array_merge( $theme_jon_content, $theme_json_post );
 
 	// Save the updated content when the form is submitted
